@@ -1,0 +1,110 @@
+
+.head {
+    background-color:#619AC8;
+    color: white;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+main {
+    flex: 1 0 auto;
+    background-color:#EEE;
+    position:relative;
+    min-height:100%;
+
+    display: flex;
+}
+
+
+div {
+    box-sizing: border-box;
+}
+
+
+
+.leftPanel {
+    /*height:100%;*/
+    width: 200px;
+    flex: 0 0 auto;
+    background-color:rgba(62, 62, 62, 1);
+    transition: all 0.3s;
+    color:#FFF;
+}
+
+
+.leftPanel:hover {
+    width: 50px;
+}
+
+
+
+footer.page-footer {
+    margin: 0;
+}
+
+
+
+
+.rightPanel {
+    flex:  auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightPanel .panelContainer {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+}
+
+
+.rightPanel .nav-tabs {
+
+}
+
+.rightPanel .tab-content {
+    flex:1;
+    position: relative;
+}
+.rightPanel .tab-content .tab-pane {
+    position: absolute;
+    height:100%;
+    width:100%;
+    display: flex;
+}
+.rightPanel .tab-content .tab-pane.active {
+    z-index:100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

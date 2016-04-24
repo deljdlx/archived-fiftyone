@@ -1,0 +1,5 @@
+**/.idea
+vendor
+/public/vendor/khi
+composer.phar
+
