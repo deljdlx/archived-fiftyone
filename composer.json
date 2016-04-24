@@ -17,15 +17,4 @@
 		"files": [
 		]
 	},
-
-
-
-	"skip": {
-		"repositories": [
-			{"type": "vcs", "url": "https://github.com/laravel/lumen.git"}
-		],
-		"require": {
-			"laravel/lumen-installer": "~1.0"
-		}
-	}
 }
