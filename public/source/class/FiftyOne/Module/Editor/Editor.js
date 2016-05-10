@@ -1,34 +1,23 @@
-
-FiftyOne.Module.Editor=function()
+FiftyOne.Module.Editor=function(workspace)
 {
 
-
+	this.workspace=workspace;
 	this.configuration=FiftyOne.Configuration.modules.editor;
 
 
-	console.debug(this.configuration);
-
-
-
-	this.theme='monokai';
-	this.editorSelector='.mainEditor textarea';
+	this.theme=this.configuration.options.theme;
 	this.modules={};
 
+
+	this.editorElement=null;
+
+
 	this.callbacks={
-		'onKeyUp': function(event) {
-		}.bind(this),
-
-		'onKeyDown': function(event) {
-			console.debug(event.keyCode);
-		}.bind(this),
-
-		'onSave':function() {
-			console.debug(this.getHTML())
-		}.bind(this)
+		'onKeyDown': this.configuration.events.keyDown.bind(this),
+		'onKeyUp': this.configuration.events.keyUp.bind(this),
+		'onSave':this.configuration.events.save.bind(this)
 	};
 
-	this.rightPanelElement=$('.editorRightPanel');
-	this.editorElement=$(this.editorSelector);
 	FiftyOne.Module.Editor.instance=this;
 };
 
@@ -47,7 +36,24 @@ FiftyOne.Module.Editor.prototype.setHTML=function(html) {
 
 
 
-FiftyOne.Module.Editor.prototype.initialize=function() {
+FiftyOne.Module.Editor.prototype.initialize=function(container) {
+
+
+	FiftyOne.ajax({
+		url: this.configuration.actions.getCSSList,
+		success:function(list) {
+
+			console.debug(list);
+
+			for(var i=0; i<list.length; i++) {
+				console.debug(list[i].url);
+				this.importCSS(list[i].url, list[i].name);
+			}
+		}.bind(this)
+	})
+
+	this.editorElement=$(container);
+
 	this.originalHeight=$('.mainEditor').height();
 
 
@@ -69,6 +75,9 @@ FiftyOne.Module.Editor.prototype.initialize=function() {
 		});
 		return button.render();   // return button as jquery object
 	}.bind(this);
+
+
+
 
 
 	var testButtom = function (context) {
@@ -96,17 +105,7 @@ FiftyOne.Module.Editor.prototype.initialize=function() {
 
 		dialogsInBody: true,
 
-		toolbar: [
-			// [groupName, [list of button]]
-			['paragraph', ['style', 'ol', 'ul', 'paragraph']],
-			['style', ['bold', 'italic', 'underline', 'clear']],
-			['insert', ['link']],
-			/*['font', ['strikethrough', 'superscript', 'subscript']],*/
-			/*['fontsize', ['fontsize']],*/
-			['color', ['color']],
-			['height', ['height']],
-			['mybutton', ['save', 'testButtom']]
-		],
+		toolbar: this.configuration.options.toolbar,
 
 		buttons: {
 			save: saveButtom,
@@ -140,12 +139,8 @@ FiftyOne.Module.Editor.prototype.initialize=function() {
 			theme: this.theme
 		},
 		callbacks: {
-			onKeydown: function(event) {
-				this.callbacks['onKeyDown'](event);
-			}.bind(this),
-			onKeyup: function(event) {
-				this.callbacks['onKeyUp'](event);
-			}.bind(this),
+			onKeydown:  this.configuration.events.keyDown.bind(this),
+			onKeyup:  this.configuration.events.keyUp.bind(this).bind(this),
 			onInit: function() {
 				$('.mainEditor header').append($('.note-toolbar'));
 				this.autoResize();
@@ -191,6 +186,10 @@ FiftyOne.Module.Editor.prototype.autoResize=function() {
 
 
 
+FiftyOne.Module.Editor.prototype.importCSS=function(url, name) {
+	return this.workspace.importCSS(url, name);
+};
+
 
 
 FiftyOne.Module.Editor.prototype.loadModule=function(name, url) {
@@ -205,11 +204,4 @@ FiftyOne.Module.Editor.prototype.loadModule=function(name, url) {
 	});
 };
 
-
-$(document).ready(function() {
-	var test=new FiftyOne.Module.Editor();
-	test.initialize();
-	//test.loadModule('Demo', 'Editor/Module/Demo/Demo.js');
-
-});
 

@@ -3,7 +3,7 @@
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="#right-panel-0" data-toggle="tab">Info</a></li>
 		<li><a href="#right-panel-1" data-toggle="tab">Media</a></li>
-		<li><a href="#right-panel-2" data-toggle="tab">Prévisualisation</a></li>
+		<li><a href="#right-panel-2" data-toggle="tab">Options</a></li>
 	</ul>
 
 	<div id="myTabContent" class="tab-content">
