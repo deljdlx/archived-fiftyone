@@ -4,24 +4,29 @@
 
 <head>
 
+
+	<meta charset="UTF-8" />
+
+
 	<link rel="stylesheet" href="vendor/font-awesome-4.5.0/css/font-awesome.min.css"/>
 
 
 
 	<script src="vendor/jquery-2.2.3.min.js"></script>
 
-
 	<link rel="stylesheet" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
 	<script src="vendor/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-
-
-
-
-
 
 	<link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/bootstrap-material-design.min.css"/>
 	<script src="vendor/bootstrap-material-design/dist/js/material.min.js"></script>
 
+
+
+
+
+	<script src="https://fb.me/react-15.0.2.js"></script>
+	<script src="https://fb.me/react-dom-15.0.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 
 
 

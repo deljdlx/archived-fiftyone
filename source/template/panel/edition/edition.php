@@ -63,14 +63,6 @@
 
 
 </style>
-<!--
-<link href='https://fonts.googleapis.com/css?family=Kanit:400,800,700,100&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://www.capital.fr/public/capital/css/article.css"/>
-<link rel="stylesheet" href="http://www.capital.fr/public/capital/css/typographie.css"/>
-//-->
-
-
-
 
 
 
@@ -83,12 +75,18 @@
 			<textarea>
 				<h1 class="article title">Titre</h1>
 
-				<div class="component" style="border: solid 10px #ccc; border-radius: 100%; width: 100px; height: 100px;" data-component-name="Component name">
+				<div class="component" style="border: solid 10px #ccc; border-radius: 100%; width: 100px; height: 100px;" data-component-type="TestComponent" data-component-name="Test component">
+					<meta data-type="attribute" data-attribute-name="Test" data-attribute-type="string" data-attribute-value="hello world 1"/>
+					<meta data-type="view">
+					hello world 1
+					</meta>
+				</div>
 
-					<meta data-attribute-name="Test" data-attribute-value="hello world" data-attribute-type="string"/>
-
-
-					hello world
+				<div class="component" style="border: solid 10px #ccc; border-radius: 100%; width: 100px; height: 100px;" data-component-type="TestComponent" data-component-name="Test component">
+					<meta data-type="attribute" data-attribute-name="Test" data-attribute-type="string" data-attribute-value="hello world 2"/>
+					<meta data-type="view">
+						hello world 2
+					</meta>
 				</div>
 
 

@@ -153,19 +153,41 @@ FiftyOne.Module.Editor.prototype.initialize=function(container) {
 	});
 
 
+	this.initializeComponents();
+
+};
+
+
+FiftyOne.Module.Editor.prototype.initializeComponents=function() {
+
 
 	$('.component').click(function(event) {
 
 
+
+	var component=FiftyOne.getComponentByElement(event.target, function() {
+		alert(1);
+	});
+
+
+
+
+		/*
 		var component=new FiftyOne.Module.Editor.Component(event.target);
 		component.dialog();
-		/*
-		var element=event.target;
-		this.dialog('coucou', $(element).data('component-name'));
 		*/
+
+
+
+		/*
+		 var element=event.target;
+		 this.dialog('coucou', $(element).data('component-name'));
+		 */
 	}.bind(this));
 
 };
+
+
 
 
 FiftyOne.Module.Editor.prototype.dialog=function(content, title) {

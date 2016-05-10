@@ -20,8 +20,6 @@ FiftyOne.Module.Workspace.prototype.run=function() {
 	this.editor=new FiftyOne.Module.Editor(this);
 	this.editor.initialize(this.editorElement);
 
-	//this.editor.importCSS('http://www.capital.fr/public/capital/css/article.css');
-
 };
 
 FiftyOne.Module.Workspace.prototype.importCSS=function(url, name) {

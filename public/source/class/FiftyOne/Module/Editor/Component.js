@@ -3,7 +3,8 @@ FiftyOne.Module.Editor.Component=function(element)
 {
 
 	this.element=element;
-	this.componentName=$(element).data('component-name');
+	this.type=$(element).data('component-type');
+	this.name=$(element).data('component-name');
 }
 
 
@@ -15,7 +16,8 @@ FiftyOne.Module.Editor.Component.prototype.dialog=function() {
 
 	$('<div>'+content+'</div>' ).dialog({
 		modal: true,
-		title: this.componentName,
+		width: '50%',
+		title: this.name+' ('+this.type+')',
 		close: function() {
 			$(this).dialog('destroy').remove()
 		}
