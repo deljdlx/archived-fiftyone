@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d0bffb5253d1166b96579c9d44867cb",
+    "hash": "775d321c8365bfc5c41d00c38203683a",
     "content-hash": "19d48bf957262579da11aca8a4a823c1",
     "packages": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ElBiniou/phi.git",
-                "reference": "294e2a3c64633b8fd2b50d96a1591632f514ee89"
+                "reference": "671993ff99f840707da2205aca1778ebf52913f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ElBiniou/phi/zipball/294e2a3c64633b8fd2b50d96a1591632f514ee89",
-                "reference": "294e2a3c64633b8fd2b50d96a1591632f514ee89",
+                "url": "https://api.github.com/repos/ElBiniou/phi/zipball/671993ff99f840707da2205aca1778ebf52913f2",
+                "reference": "671993ff99f840707da2205aca1778ebf52913f2",
                 "shasum": ""
             },
             "type": "library",
@@ -32,7 +32,7 @@
                 "source": "https://github.com/ElBiniou/phi/tree/master",
                 "issues": "https://github.com/ElBiniou/phi/issues"
             },
-            "time": "2016-04-24 13:52:52"
+            "time": "2016-05-10 15:55:46"
         }
     ],
     "packages-dev": [],

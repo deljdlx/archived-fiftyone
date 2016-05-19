@@ -14,7 +14,6 @@
 		"process-timeout": 600
 	},
 	"autoload": {
-		"files": [
-		]
-	},
+		"files": []
+	}
 }
